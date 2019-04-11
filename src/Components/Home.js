@@ -5,7 +5,7 @@ class Home extends React.Component{
   render(){
     return(
       <div>
-        AYAYAYA
+        AYAYAYA Hey ROBERT!
       </div>
     )
   }
