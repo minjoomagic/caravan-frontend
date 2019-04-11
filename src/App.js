@@ -9,7 +9,10 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="/" component={Main} />
+        <Route
+          path="/"
+          render={routerProps => (<Main/>)}
+          />
         </Switch>
       </div>
     );

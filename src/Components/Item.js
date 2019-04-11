@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import '../Styling/Item.css';
 
 const Item = (props) => {
@@ -7,7 +8,9 @@ const Item = (props) => {
 
   return(
     <div>
-      <img src={image_url} alt="" />
+      <Link to={`/items/${props.item.id}`}>
+        <img src={image_url} alt="" />
+      </Link>
       <h2>{name}</h2>
       <h2>Category: {category}</h2>
       <h2>Price: {price}</h2>
