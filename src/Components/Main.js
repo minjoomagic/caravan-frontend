@@ -41,6 +41,29 @@ class Main extends React.Component{
     this.setState({selection: selection})
   }
 
+  createSubmitHandler = (item) => {
+    let url = "http://localhost:3000/items"
+    let config = {
+      method: "POST",
+      // mode: "cors",
+      // credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
+    }
+    fetch(url, config)
+    .then(res => res.json())
+    .then(item => {
+      console.log(item)
+      this.addItemToState(item)})
+  }
+
+  addItemToState = (item) => {
+    let newArray = [item, ...this.state.items]
+    this.setState({items: newArray})
+  }
+
  // --------------- Master Filter Handler ------------------
   filterHandler = () =>{
     if(this.state.searchTerm && this.state.selection){
@@ -88,7 +111,7 @@ class Main extends React.Component{
     return(
       <div>
         <Filter categories={categories} selectHandler={this.selectHandler} submitHandler={this.submitHandler}/>
-        <Form />
+        <Form categories={categories} createSubmitHandler={this.createSubmitHandler}/>
         <ItemContainer items={items}/>
       </div>
     )
