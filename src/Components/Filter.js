@@ -7,8 +7,8 @@ const Filter = (props) => {
   return(
     <div>
       This is Filter
-      And <SearchBar />
-      And <CategoryFilter />
+      And <SearchBar submitHandler={props.submitHandler}/>
+      And <CategoryFilter categories={props.categories} selectHandler={props.selectHandler}/>
     </div>
   )
 }
