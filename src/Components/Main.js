@@ -22,7 +22,9 @@ class Main extends React.Component{
   fetchItems = () => {
     fetch('http://localhost:3000/items')
     .then(res => res.json())
-    .then(items => this.setState({items: items}))
+    .then(items => {
+      console.log(items)
+      this.setState({items: items})})
   }
 
   // ---------------- Fetch Categories ---------------------
@@ -106,6 +108,7 @@ class Main extends React.Component{
 
 
   render(){
+    console.log("items in render method from main", this.state.items)
     let items = this.filterHandler()
     let categories = this.state.categories
     return(

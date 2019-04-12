@@ -6,7 +6,10 @@ const Item = (props) => {
 
   let {name, category, price, image_url, description} = props.item
 
+  console.log("props in item component", props.item)
+
   return(
+
     <div>
       <Link to={`/items/${props.item.id}`}>
         <img src={image_url} alt="" />
