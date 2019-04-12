@@ -14,6 +14,7 @@ class Main extends React.Component{
 
   // ================= Fetch Data =====================
   componentDidMount(){
+    console.log("Main did mount")
     this.fetchItems()
     this.fetchCategories()
   }
@@ -23,7 +24,6 @@ class Main extends React.Component{
     fetch('http://localhost:3000/items')
     .then(res => res.json())
     .then(items => {
-      console.log(items)
       this.setState({items: items})})
   }
 
@@ -108,7 +108,7 @@ class Main extends React.Component{
 
 
   render(){
-    console.log("items in render method from main", this.state.items)
+    console.log("Main state, should have data", this.state)
     let items = this.filterHandler()
     let categories = this.state.categories
     return(

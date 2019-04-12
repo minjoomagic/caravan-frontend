@@ -7,6 +7,7 @@ const CategoryFilter = (props) => {
     props.selectHandler(e.target.value)
   }
 
+
   return(
     <div>
     <select onChange={selectHandler}>

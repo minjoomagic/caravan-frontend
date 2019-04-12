@@ -6,7 +6,7 @@ const ItemContainer = (props) => {
 
   let items = props.items.map(item => <Item key={item.id} item={item}/>)
 
-  console.log("items in item container", props.items)
+  console.log("items container did mount")
 
   return(
     <div>

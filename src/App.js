@@ -29,7 +29,6 @@ class App extends Component {
 // ================== HANDLE LOGIN ================
   onLoginHandler = (user) => {
     let token = localStorage.getItem("token");
-    console.log("In App Login Function FIRING!!", user)
     fetch("http://localhost:3000/login_user",
     {
       method: "POST",
@@ -42,7 +41,6 @@ class App extends Component {
     }
   )
     .then(resp => resp.json())
-    // .then(data => console.log("we're here", data.user))
     .then(data => this.setState({ user: data.user}));
   }
 
@@ -61,7 +59,6 @@ class App extends Component {
     fetch("http://localhost:3000/users", config)
     .then(resp => resp.json())
     .then(data => {
-      console.log(data)
       this.setState({ user: data.user})
       localStorage.setItem("token", data.token)
     })
@@ -69,7 +66,6 @@ class App extends Component {
   }
   // ================ HANDLE LOGOUT ================
   logout = () => {
-    console.log("logging out");
     localStorage.removeItem("token");
     this.props.history.push("/login");
     this.setState({user: null})
@@ -78,7 +74,6 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.user)
     return (
       <div className="App">
         {this.state.user ? this.state.user.username : "Not Logged In"}
