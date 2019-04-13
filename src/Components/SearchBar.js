@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { withRouter } from 'react-router-dom'
 
 
 class SearchBar extends React.Component{
@@ -13,7 +13,10 @@ class SearchBar extends React.Component{
   }
 
   submitHandler = (e) =>{
-    this.props.submitHandler(this.state.searchTerm)
+    this.props.history.push("/items");
+    let searchTerm = this.state.searchTerm
+    this.props.submitHandler(searchTerm)
+    // this.setState({searchTerm: ""})
   }
 
   render(){
@@ -33,4 +36,4 @@ class SearchBar extends React.Component{
 
 }
 
-export default SearchBar
+export default withRouter(SearchBar)

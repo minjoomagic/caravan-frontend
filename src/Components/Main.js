@@ -2,6 +2,7 @@ import React from 'react'
 import Filter from './Filter'
 import Form from './Form'
 import ItemContainer from './ItemContainer'
+import { withRouter } from 'react-router-dom'
 
 class Main extends React.Component{
 
@@ -47,8 +48,6 @@ class Main extends React.Component{
     let url = "http://localhost:3000/items"
     let config = {
       method: "POST",
-      // mode: "cors",
-      // credentials: "same-origin", // include, *same-origin, omit
       headers: {
           "Content-Type": "application/json",
       },
@@ -79,7 +78,7 @@ class Main extends React.Component{
       return this.state.items
     }
   }
-  
+
   // ----------------- Handle Search Only ----------------
   nameSearchFilter = (input) => {
     return this.state.items.filter(item => {
@@ -89,7 +88,6 @@ class Main extends React.Component{
 
   // ------- Handle Selection Only -----
   categorySelectionFilter = (input) => {
-    console.log("input is: ", input)
     if(input.toLowerCase() !== "all"){
       return this.state.items.filter(item => {
         return item.category.toLowerCase().includes(input.toLowerCase())
@@ -109,7 +107,6 @@ class Main extends React.Component{
 
 
   render(){
-    console.log("Main state, should have data", this.state)
     let items = this.filterHandler()
     let categories = this.state.categories
     return(
@@ -120,7 +117,6 @@ class Main extends React.Component{
       </div>
     )
   }
-
 }
 
-export default Main
+export default withRouter(Main)
