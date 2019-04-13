@@ -2,24 +2,48 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import '../Styling/Item.css';
 
-const Item = (props) => {
 
-  let {name, category, price, image_url, description} = props.item
+// FOCUS WORK HERE, THIS IS WHERE WE HANDLE WHERE WE COME FROM TO EXECUTE DIFFERENT COMMANDS
+class Item extends React.Component {
 
-  console.log("props in item component", props.item)
+  state = {
+    name: "",
+    price: "",
+    image_url: "",
+    description: ""
+  }
 
-  return(
 
-    <div>
-      <Link to={`/items/${props.item.id}`}>
-        <img src={image_url} alt="" />
-      </Link>
-      <h2>{name}</h2>
-      <h2>Category: {category}</h2>
-      <h2>Price: {price}</h2>
-      <h2>Description: {description}</h2>
-    </div>
-  )
+  render(){
+
+      let {name, category, price, image_url, description} = this.props.item
+
+      return(
+
+      <React.Fragment>
+        { this.props.item.item ?
+          <div>
+             <Link to={`/items/${this.props.item.id}`}>
+               <img src={this.props.item.item.image_url} alt="" />
+             </Link>
+             <h2>{this.props.item.item.name}</h2>
+             <h2>Category: {this.props.item.item.category}</h2>
+             <h2>Price: {this.props.item.item.price}</h2>
+             <h2>Description: {this.props.item.item.description}</h2>
+           </div> :
+           <div>
+              <Link to={`/items/${this.props.item.id}`}>
+                <img src={image_url} alt="" />
+              </Link>
+              <h2>{name}</h2>
+              <h2>Category: {category}</h2>
+              <h2>Price: {price}</h2>
+              <h2>Description: {description}</h2>
+            </div>
+         }
+         </React.Fragment>
+      )
+    }
 }
 
 export default Item

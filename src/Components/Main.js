@@ -79,6 +79,7 @@ class Main extends React.Component{
       return this.state.items
     }
   }
+  
   // ----------------- Handle Search Only ----------------
   nameSearchFilter = (input) => {
     return this.state.items.filter(item => {
