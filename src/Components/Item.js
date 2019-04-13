@@ -23,9 +23,10 @@ class Item extends React.Component {
       <React.Fragment>
         { this.props.item.item ?
           <div>
-             <Link to={`/items/${this.props.item.id}`}>
-               <img src={this.props.item.item.image_url} alt="" />
+             <Link to={'/items'}>
+              <button> Back to Items </button>
              </Link>
+             <img src={this.props.item.item.image_url} alt="" />
              <h2>{this.props.item.item.name}</h2>
              <h2>Category: {this.props.item.item.category}</h2>
              <h2>Price: {this.props.item.item.price}</h2>
