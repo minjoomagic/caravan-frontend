@@ -5,7 +5,6 @@ import './App.css';
 import Main from './Components/Main'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
-import Map from './Components/Map'
 
 class App extends Component {
 
@@ -15,7 +14,7 @@ class App extends Component {
 
   componentDidMount() {
   let token = localStorage.getItem("token");
-  console.log("app did mount");
+  console.log("App did Mount!, token is: ", token);
   fetch("http://localhost:3000/get_user", {
     method: "GET",
     headers: {
@@ -25,10 +24,14 @@ class App extends Component {
     }
   })
   .then(resp => resp.json())
-  .then(data => this.setState({ user: data.user }));
+  .then(data => {
+    console.log("data returned from API:", data)
+    this.setState({ user: data.user })});
+  console.log("end of component did mount")
 }
 // ================== HANDLE LOGIN ================
   onLoginHandler = (user) => {
+    console.log("onLoginHandlerFIRING!!!")
     let token = localStorage.getItem("token");
     fetch("http://localhost:3000/login_user",
     {
@@ -42,7 +45,12 @@ class App extends Component {
     }
   )
     .then(resp => resp.json())
-    .then(data => this.setState({ user: data.user}));
+    .then(data => {
+      localStorage.setItem("token", data.jwt)
+      this.setState({ user: data.user})
+    });
+    console.log("token is:", localStorage.token)
+    // this.props.history.push("/items");
   }
 
 // ================== HANDLE CREATE USER ================
@@ -60,6 +68,7 @@ class App extends Component {
     fetch("http://localhost:3000/users", config)
     .then(resp => resp.json())
     .then(data => {
+      console.log("create user fired:", data)
       this.setState({ user: data.user})
       localStorage.setItem("token", data.token)
     })
@@ -75,6 +84,7 @@ class App extends Component {
 
 
   render() {
+    // console.log("this is my user:", this.state.user)
     return (
       <div className="App">
         {this.state.user ? this.state.user.username : "Not Logged In"}

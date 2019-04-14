@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+import { withRouter } from 'react-router-dom'
 
 class Login extends React.Component{
 
@@ -25,11 +27,11 @@ class Login extends React.Component{
         Password
         <input onChange={this.onChangeHandler} type="password" name="password" />
         </label>
-        <button onClick={this.onLoginHandler}> Sign in </button>
+          <button onClick={this.onLoginHandler}> Sign in </button>
       </div>
     )
   }
 
 }
 
-export default Login
+export default withRouter(Login)
