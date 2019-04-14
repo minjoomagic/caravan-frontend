@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Styling/Show.css';
-import Item from './Item'
+import ItemShow from './ItemShow'
 import UserInfo from './UserInfo'
 
 class View extends React.Component{
@@ -9,17 +9,13 @@ class View extends React.Component{
     item: {}
   }
 
-  componenDidMount(){
-    console.log("CDM - props from show", this.props)
-  }
-
   render(){
     return(
       <div className="view">
         <div className="left-side">
           <div className="item-main">
             {"render un item ici " }
-            <Item item={this.props}/>
+            <ItemShow item={this.props}/>
           </div>
         </div>
         <div className="right-side">

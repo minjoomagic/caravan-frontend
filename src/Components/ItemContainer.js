@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, Switch } from "react-router-dom";
-import Item from './Item'
+import ItemCard from './ItemCard'
 import Show from './Show'
 
 const ItemContainer = (props) => {
 
-  let items = props.items.map(item => <Item key={item.id} item={item}/>)
+  let items = props.items.map(item => <ItemCard key={item.id} item={item}/>)
 
 
   return(
