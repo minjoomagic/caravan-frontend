@@ -2,6 +2,7 @@ import React from 'react'
 import '../Styling/Show.css';
 import ItemShow from './ItemShow'
 import UserInfo from './UserInfo'
+import Map from './Map'
 
 class View extends React.Component{
 
@@ -21,6 +22,7 @@ class View extends React.Component{
         <div className="right-side">
          {"render sa desc ici"}
          <UserInfo item={this.props}/>
+         <Map />
         </div>
       </div>
     )

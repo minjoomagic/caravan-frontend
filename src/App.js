@@ -5,6 +5,7 @@ import './App.css';
 import Main from './Components/Main'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
+import Map from './Components/Map'
 
 class App extends Component {
 
