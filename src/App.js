@@ -85,7 +85,6 @@ class App extends Component {
 
 
   render() {
-    // console.log("this is my user:", this.state.user)
     return (
       <div className="App">
         {this.state.user ? this.state.user.username : "Not Logged In"}

@@ -4,8 +4,8 @@ import 'leaflet/dist/leaflet.css'
 
 class myMap extends Component {
   state = {
-    lat: 51.505,
-    lng: -0.09,
+    lat: 40.7128,
+    lng: -74.0060,
     zoom: 13,
   }
 
