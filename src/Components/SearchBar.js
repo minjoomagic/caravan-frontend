@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import { Button, Form, FormControl } from "react-bootstrap";
 
 
 class SearchBar extends React.Component{
@@ -16,17 +17,22 @@ class SearchBar extends React.Component{
     this.props.history.push("/items");
     let searchTerm = this.state.searchTerm
     this.props.submitHandler(searchTerm)
-    // this.setState({searchTerm: ""})
   }
 
   render(){
+
+    //   <Form inline>
+    //     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+    //     <Button variant="outline-light">Search</Button>
+    //   </Form>
+    //
     return(
       <div>
-        <label>
-        Search:
-        <input onChange={this.onChangeHandler} type="text" name="search" value={this.state.searchTerm}/>
-        </label>
-        <button onClick={this.submitHandler}> Search </button>
+        <Form inline>
+          <FormControl onChange={this.onChangeHandler} className="mr-sm-2" type="text" placeholder="Search" name="search" value={this.state.searchTerm}/>
+          <Button variant="outline-light" onClick={this.submitHandler}> Search </Button>
+        </Form>
+
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React from 'react'
-import Filter from './Filter'
-import Form from './Form'
+import Header from './Header'
+import SellForm from './SellForm'
 import ItemContainer from './ItemContainer'
 import { withRouter } from 'react-router-dom'
 
@@ -10,12 +10,14 @@ class Main extends React.Component{
     items: [],
     categories: [],
     searchTerm: "",
-    selection: ""
+    selection: "",
+    sellForm: false
   }
 
   // ================= Fetch Data =====================
   componentDidMount(){
     console.log("Main did mount")
+    this.setState({user: this.props.user})
     this.fetchItems()
     this.fetchCategories()
   }
@@ -44,20 +46,20 @@ class Main extends React.Component{
     this.setState({selection: selection})
   }
 
-  createSubmitHandler = (item) => {
+  createSubmitHandler = (item, user) => {
     let url = "http://localhost:3000/items"
     let config = {
       method: "POST",
       headers: {
           "Content-Type": "application/json",
       },
-      body: JSON.stringify(item),
+      body: JSON.stringify({user: user, item: item}),
     }
     fetch(url, config)
     .then(res => res.json())
     .then(item => {
-      console.log(item)
       this.addItemToState(item)})
+
   }
 
   addItemToState = (item) => {
@@ -104,15 +106,19 @@ class Main extends React.Component{
     })
   }
 
+  // ------------- Toggle Sell Form --------------
 
+  toggleForm = () => {
+    this.setState({sellForm: !this.state.sellForm})
+  }
 
   render(){
     let items = this.filterHandler()
     let categories = this.state.categories
     return(
       <div>
-        <Filter categories={categories} selectHandler={this.selectHandler} submitHandler={this.submitHandler}/>
-        <Form categories={categories} createSubmitHandler={this.createSubmitHandler}/>
+        <Header logOutHandler={this.props.logOutHandler} user={this.props.user} toggleFormHandler = {this.toggleForm} categories={categories} createSubmitHandler={this.createSubmitHandler} title="Caravan" logo="truck" color="primary" selectHandler={this.selectHandler} submitHandler={this.submitHandler}/>
+        {this.state.sellForm ? <SellForm user={this.props.user} categories={categories} createSubmitHandler={this.createSubmitHandler}/> : null}
         <ItemContainer items={items}/>
       </div>
     )

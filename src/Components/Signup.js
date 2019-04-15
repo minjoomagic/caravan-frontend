@@ -4,7 +4,9 @@ class Signup extends React.Component{
 
   state = {
     username: "",
-    password: ""
+    password: "",
+    address: "",
+    phoneNumber: ""
   }
 
   onChangeHandler = (e) =>{
@@ -22,8 +24,12 @@ class Signup extends React.Component{
         <label>
         Username:
         <input onChange={this.onChangeHandler} type="text" name="username" />
-        Password
+        Password:
         <input onChange={this.onChangeHandler} type="password" name="password" />
+        Address:
+        <input onChange={this.onChangeHandler} type="text" name="address" />
+        Phone Number:
+        <input onChange={this.onChangeHandler} type="number" name="phoneNumber" />
         </label>
         <button onClick={this.onCreateUserHandler}> Create Account </button>
       </div>

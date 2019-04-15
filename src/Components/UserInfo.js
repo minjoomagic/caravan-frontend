@@ -5,6 +5,7 @@ class UserInfo extends React.Component{
 
   render(){
     this.props.item.item ? console.log(this.props.item.item.name) : console.log("akh")
+    console.log("this is my item's info: ", this.props.item.item)
     return(
       <div className="user-info">
         {

@@ -5,7 +5,6 @@ import './App.css';
 import Main from './Components/Main'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
-import Header from './Components/Header'
 
 class App extends Component {
 
@@ -63,7 +62,7 @@ class App extends Component {
         accepts: "application/json"
       },
       body: JSON.stringify({
-        user: { username: user.username, password: user.password }
+        user: { username: user.username, password: user.password, address: user.address, phone_number: user.phoneNumber }
       })
     }
     fetch("http://localhost:3000/users", config)
@@ -77,7 +76,7 @@ class App extends Component {
 
   }
   // ================ HANDLE LOGOUT ================
-  logout = () => {
+  logoutHandler = () => {
     localStorage.removeItem("token");
     this.props.history.push("/login");
     this.setState({user: null})
@@ -88,11 +87,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.user ? this.state.user.username : "Not Logged In"}
-        <button onClick={this.logout}> Log Out </button>
-        <Header title="Caravan" logo="truck" color="primary" />
+        {/*this.state.user ? this.state.user.username : "Not Logged In"*/}
+
         <Switch>
-        <Route path="/items" render={routerProps => (<Main/>)}/>
+        <Route path="/items" render={routerProps => (<Main logOutHandler={this.logoutHandler} user={this.state.user}/>)}/>
         <Route path="/signup" render={routerProps => (<Signup onCreateUserHandler={this.onCreateUserHandler}/>)}/>
         <Route path="/login" render={routerProps => (<Login onLoginHandler={this.onLoginHandler}/>)}/>
         </Switch>
