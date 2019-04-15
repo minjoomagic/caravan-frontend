@@ -63,6 +63,7 @@ class SellForm extends React.Component {
       <div style={formStyle}>
         <Form>
           <Form.Group>
+          
             <Form.Label>Item title</Form.Label>
             <Form.Control type="text" name="name" placeholder="Ikea table" value={this.state.item.name} onChange={this.changeHandler}/>
             <Form.Label>Item price</Form.Label>
