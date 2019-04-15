@@ -52,10 +52,17 @@ class SellForm extends React.Component {
     })
   }
 
-  render() {
 
+
+  render() {
+    let divStyle = {
+      width: '800px',
+      borderWidth: 'thick',
+      borderColor: 'red',
+      margin: '0 auto'
+    };
     return(
-      <div>
+      <div style={divStyle}>
         <Form>
           <Form.Group>
             <Form.Label>Item title</Form.Label>
@@ -74,22 +81,6 @@ class SellForm extends React.Component {
             </Form.Control>
             <Button onClick={this.createSubmitHandler} >Post Item for Sale</Button>
           </Form.Group>
-        <label>
-           Name:
-           <input type="text" name="name" value={this.state.name} onChange={this.changeHandler} />
-           Price:
-           <input type="text" name="price" value={this.state.price} onChange={this.changeHandler} />
-           Description:
-           <input type="text" name="description" value={this.state.description} onChange={this.changeHandler} />
-           Image_url:
-           <input type="text" name="image_url" value={this.state.image_url} onChange={this.changeHandler} />
-           <select onChange={this.selectHandler}>
-             {this.props.categories.map(category => {
-               return <option value={`${category.name}`}>{category.name}</option>
-             })}
-           </select>
-        </label>
-           <button onClick={this.createSubmitHandler}  >Add Item</button>
         </Form>
       </div>
     )
