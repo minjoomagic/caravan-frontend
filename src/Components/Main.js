@@ -59,7 +59,7 @@ class Main extends React.Component{
     .then(res => res.json())
     .then(item => {
       this.addItemToState(item)})
-
+    this.toggleForm()
   }
 
   addItemToState = (item) => {

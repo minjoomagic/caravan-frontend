@@ -52,17 +52,15 @@ class SellForm extends React.Component {
     })
   }
 
-
-
   render() {
-    let divStyle = {
+    let formStyle = {
       width: '800px',
       borderWidth: 'thick',
       borderColor: 'red',
       margin: '0 auto'
     };
     return(
-      <div style={divStyle}>
+      <div style={formStyle}>
         <Form>
           <Form.Group>
             <Form.Label>Item title</Form.Label>
