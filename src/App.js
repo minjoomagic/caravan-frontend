@@ -50,7 +50,7 @@ class App extends Component {
       this.setState({ user: data.user})
     });
     console.log("token is:", localStorage.token)
-    // this.props.history.push("/items");
+    this.props.history.push("/items");
   }
 
 // ================== HANDLE CREATE USER ================
@@ -71,6 +71,7 @@ class App extends Component {
       console.log("create user fired:", data)
       this.setState({ user: data.user})
       localStorage.setItem("token", data.token)
+      this.props.history.push("/items");
     })
 
   }
