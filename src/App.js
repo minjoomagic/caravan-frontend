@@ -5,6 +5,7 @@ import './App.css';
 import Main from './Components/Main'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
+import Header from './Components/Header'
 
 class App extends Component {
 
@@ -89,6 +90,7 @@ class App extends Component {
       <div className="App">
         {this.state.user ? this.state.user.username : "Not Logged In"}
         <button onClick={this.logout}> Log Out </button>
+        <Header title="Caravan" logo="truck" color="primary" />
         <Switch>
         <Route path="/items" render={routerProps => (<Main/>)}/>
         <Route path="/signup" render={routerProps => (<Signup onCreateUserHandler={this.onCreateUserHandler}/>)}/>
