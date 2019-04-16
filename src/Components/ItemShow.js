@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { capitalize } from "../Utilities/Utilities";
+import { Navbar, Nav, Button } from "react-bootstrap";
+
 import '../Styling/ItemShow.css';
 
 const ItemShow = (props) => {
@@ -12,9 +14,10 @@ const ItemShow = (props) => {
   return(
     <div >
       <img className="item-show" src={image_url} alt="" />
-      <h2>{name}</h2>
+      <h2>{capitalize(name)}</h2>
       <Link to={'/items'}>
-        <button>back</button>
+        <Button>back</Button>
+        <Button> Buy </Button>
       </Link>
     </div>
   )

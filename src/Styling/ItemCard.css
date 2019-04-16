@@ -13,5 +13,5 @@
 .item-image {
   justify-self: center;
   height: 12rem;
-  width: auto;
+  width: 100%;
 }

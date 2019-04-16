@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import SellForm from "./SellForm";
+import Alert from "./Alert";
 import ItemContainer from "./ItemContainer";
 import { withRouter } from "react-router-dom";
 

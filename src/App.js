@@ -46,10 +46,13 @@ class App extends Component {
       .then(resp => resp.json())
       .then(data => {
         localStorage.setItem("token", data.jwt);
-        this.setState({ user: data.user });
-      });
+        this.setState({ user: data.user }, () => {
+          if(this.state.user){
+            this.props.history.push("/items")
+          }
+        });
+      })
     console.log("token is:", localStorage.token);
-    this.props.history.push("/items");
   };
 
   // ================== HANDLE CREATE USER ================

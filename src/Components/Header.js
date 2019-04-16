@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import { capitalize } from "../Utilities/Utilities";
 import CategoryFilter from "./CategoryFilter";
 import { Navbar, Nav, Button } from "react-bootstrap";
+import Alert from './Alert'
 import "../Styling/Header.css";
 
 const Header = props => {

@@ -1,15 +1,7 @@
 import React from "react";
-import {
-  Dropdown,
-  ButtonGroup,
-  Button,
-  FormControl,
-  FormGroup,
-  SplitButton,
-  Form
-} from "react-bootstrap";
+import { Dropdown, ButtonGroup, Button, FormControl, FormGroup, SplitButton, Form} from "react-bootstrap";
 import "../Styling/Category.css";
-
+import Alert from './Alert'
 class SellForm extends React.Component {
   state = {
     item: {
@@ -69,6 +61,7 @@ class SellForm extends React.Component {
       margin: "0 auto"
     };
     return (
+      (this.state.user) ?
       <div style={formStyle}>
         <Form>
           <Form.Group>
@@ -122,7 +115,8 @@ class SellForm extends React.Component {
             </Button>
           </Form.Group>
         </Form>
-      </div>
+      </div>:
+      <Alert/>
     );
   }
 }
