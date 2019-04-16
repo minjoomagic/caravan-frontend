@@ -27,7 +27,7 @@ class Login extends React.Component {
 
     let inputStyle = {
       width: "400px",
-      borderWidth: "thick",
+      borderWidth: "normal",
       borderColor: "green",
       margin: "0 auto"
     };

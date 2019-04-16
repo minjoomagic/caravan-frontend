@@ -22,7 +22,7 @@ class Signup extends React.Component {
   render() {
     let inputStyle = {
       width: "400px",
-      borderWidth: "thick",
+      borderWidth: "normal",
       borderColor: "green",
       margin: "0 auto"
     };
@@ -55,10 +55,7 @@ class Signup extends React.Component {
             </Button>
           </p>
 
-          <h3 className={`fas`}>
-            {" "}
-            Welcome to Caravan! Signup to get started!{" "}
-          </h3>
+          <h3 className="App"> Welcome to Caravan! Signup to get started! </h3>
           <Form className="form">
             <Col>
               <FormGroup>

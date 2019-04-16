@@ -1,16 +1,21 @@
-import React from 'react'
-import { withRouter } from 'react-router-dom'
-import { Dropdown, ButtonGroup, Button, FormControl, FormGroup, SplitButton, Form } from "react-bootstrap";
+import React from "react";
+import { withRouter } from "react-router-dom";
+import {
+  Dropdown,
+  ButtonGroup,
+  Button,
+  FormControl,
+  FormGroup,
+  SplitButton,
+  Form
+} from "react-bootstrap";
 
-
-
-const CategoryFilter = (props) => {
-
-  const selectHandler = (e) =>{
-    console.log("ON CHANGE firing!", e.target.value)
+const CategoryFilter = props => {
+  const selectHandler = e => {
+    console.log("ON CHANGE firing!", e.target.value);
     props.history.push("/items");
-    props.selectHandler(e.target.value)
-  }
+    props.selectHandler(e.target.value);
+  };
 
   // <Dropdown as={ButtonGroup}>
   //   <Button variant="success">Split Button</Button>
@@ -24,19 +29,18 @@ const CategoryFilter = (props) => {
   //   </Dropdown.Menu>
   // </Dropdown>;
 
-  return(
+  return (
     <div>
-    <Form controlId="exampleForm.ControlSelect1">
-      <Form.Control as="select"  onChange={selectHandler}>
-        <option  value="All">All</option>
+      <Form controlId="exampleForm.ControlSelect1">
+        <Form.Control as="select" onChange={selectHandler}>
+          <option value="All">All</option>
           {props.categories.map(category => {
-            return <option  value={`${category.name}`}>{category.name}</option>
+            return <option value={`${category.name}`}>{category.name}</option>;
           })}
-      </Form.Control>
-    </Form>
-
+        </Form.Control>
+      </Form>
     </div>
-  )
-}
+  );
+};
 
-export default withRouter(CategoryFilter)
+export default withRouter(CategoryFilter);
