@@ -5,7 +5,9 @@ import Show from "./Show";
 import "../Styling/ItemCont.css";
 
 const ItemContainer = props => {
-  let items = props.items.filter(item => item.sold === false).map(item => <ItemCard key={item.id} item={item} />);
+  let items = props.items
+    .filter(item => item.sold === false)
+    .map(item => <ItemCard key={item.id} item={item} />);
 
   return (
     <div>
