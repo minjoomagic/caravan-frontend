@@ -20,8 +20,20 @@ class Login extends React.Component {
   };
 
   render() {
+    let logInStyle = {
+      width: "800px",
+      margin: "0 auto"
+    };
+
+    let inputStyle = {
+      width: "400px",
+      borderWidth: "thick",
+      borderColor: "green",
+      margin: "0 auto"
+    };
+
     return (
-      <div>
+      <div style={logInStyle}>
         <Navbar bg={this.props.color} variant="dark">
           <Navbar.Brand className={`fas fa-${this.props.logo}`} href="/">
             {" "}
@@ -47,38 +59,40 @@ class Login extends React.Component {
               Explore
             </Button>
           </p>
-        </Jumbotron>
 
-        <Container className="App">
-          <h2>Welcome back to Caravan! Login to get started again!</h2>
-          <Form className="form">
-            <Col>
-              <FormGroup>
-                <Label>Username</Label>
-                <Input
-                  onChange={this.onChangeHandler}
-                  type="text"
-                  name="username"
-                  placeholder="My Username"
-                />
-              </FormGroup>
-            </Col>
-            <Col>
-              <FormGroup>
-                <Label for="examplePassword">Password</Label>
-                <Input
-                  onChange={this.onChangeHandler}
-                  type="password"
-                  name="password"
-                  placeholder="********"
-                />
-              </FormGroup>
-            </Col>
-            <Button variant="primary" onClick={this.onLoginHandler}>
-              Log in
-            </Button>
-          </Form>
-        </Container>
+          <Container className="App">
+            <h3>Welcome back to Caravan! Login to get started again!</h3>
+            <Form className="form">
+              <Col>
+                <FormGroup>
+                  <Label>Username</Label>
+                  <Input
+                    onChange={this.onChangeHandler}
+                    type="text"
+                    name="username"
+                    placeholder="My Username"
+                    style={inputStyle}
+                  />
+                </FormGroup>
+              </Col>
+              <Col>
+                <FormGroup>
+                  <Label for="examplePassword">Password</Label>
+                  <Input
+                    onChange={this.onChangeHandler}
+                    type="password"
+                    name="password"
+                    placeholder="********"
+                    style={inputStyle}
+                  />
+                </FormGroup>
+              </Col>
+              <Button variant="primary" onClick={this.onLoginHandler}>
+                Log in
+              </Button>
+            </Form>
+          </Container>
+        </Jumbotron>
       </div>
     );
   }

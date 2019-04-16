@@ -4,6 +4,12 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 
 class LandingPage extends React.Component {
   render() {
+    let landingStyle = {
+      width: "auto",
+      height: "auto",
+      margin: "auto"
+    };
+
     return (
       <div>
         <Navbar bg={this.props.color} variant="dark">
@@ -12,7 +18,7 @@ class LandingPage extends React.Component {
             {this.props.title}
           </Navbar.Brand>
         </Navbar>
-        <Jumbotron>
+        <Jumbotron style={landingStyle}>
           <h1 className={`fas fa-${this.props.logo}`}>Caravan</h1>
           <p>
             The best way to sell all your goods online. Pickup in person or

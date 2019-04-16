@@ -1,40 +1,42 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
-import '../Styling/Item.css';
-
+import { Card, Button } from "react-bootstrap";
+import "../Styling/Item.css";
+import "../Styling/ItemCard.css";
 
 // FOCUS WORK HERE, THIS IS WHERE WE HANDLE WHERE WE COME FROM TO EXECUTE DIFFERENT COMMANDS
 class Item extends React.Component {
-
   state = {
     name: "",
     price: "",
     image_url: "",
     description: ""
-  }
+  };
 
+  render() {
+    let { name, category, price, image_url, description } = this.props.item;
 
-  render(){
-
-      let {name, category, price, image_url, description} = this.props.item
-
-      return(
-
+    return (
       <React.Fragment>
-
-          <div>
+        <div>
+          <Card className="card" style={{ width: "18rem" }}>
+            <Link to={`/items/${this.props.item.id}`}>
+              <Card.Img className="item-image" variant="top" src={image_url} />
+            </Link>
+            <Card.Body>
+              <Card.Title>{name}</Card.Title>
+              <Card.Text>Category: {category}</Card.Text>
+              <Card.Text>Price: {price}</Card.Text>
+              <Card.Text>Description: {description}</Card.Text>
               <Link to={`/items/${this.props.item.id}`}>
-                <img src={image_url} alt="" />
+                <Button variant="success">More Info</Button>
               </Link>
-              <h2>{name}</h2>
-              <h2>Category: {category}</h2>
-              <h2>Price: {price}</h2>
-              <h2>Description: {description}</h2>
-            </div>
-         
-         </React.Fragment>
-      )
-    }
+            </Card.Body>
+          </Card>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
-export default Item
+export default Item;

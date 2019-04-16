@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import { capitalize } from "../Utilities/Utilities";
 import CategoryFilter from "./CategoryFilter";
 import { Navbar, Nav, Button } from "react-bootstrap";
+import "../Styling/Header.css";
 
 const Header = props => {
   console.log("props of header:", props);
@@ -18,7 +19,7 @@ const Header = props => {
 
   return (
     <div>
-      <Navbar bg={props.color} variant="dark">
+      <Navbar className="header" bg={props.color} variant="dark">
         <Navbar.Brand className={`fas fa-${props.logo}`} href="/">
           {" "}
           {props.title}

@@ -20,6 +20,13 @@ class Signup extends React.Component {
   };
 
   render() {
+    let inputStyle = {
+      width: "400px",
+      borderWidth: "thick",
+      borderColor: "green",
+      margin: "0 auto"
+    };
+
     return (
       <div>
         <Navbar bg={this.props.color} variant="dark">
@@ -47,57 +54,65 @@ class Signup extends React.Component {
               Explore
             </Button>
           </p>
+
+          <h3 className={`fas`}>
+            {" "}
+            Welcome to Caravan! Signup to get started!{" "}
+          </h3>
+          <Form className="form">
+            <Col>
+              <FormGroup>
+                <Label>Username</Label>
+                <Input
+                  onChange={this.onChangeHandler}
+                  type="text"
+                  name="username"
+                  placeholder="My Username"
+                  style={inputStyle}
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label for="examplePassword">Password</Label>
+                <Input
+                  onChange={this.onChangeHandler}
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  style={inputStyle}
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label for="address">Address</Label>
+                <Input
+                  onChange={this.onChangeHandler}
+                  type="text"
+                  name="address"
+                  placeholder="Address"
+                  style={inputStyle}
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label for="phoneNumber">Phone Number</Label>
+                <Input
+                  onChange={this.onChangeHandler}
+                  type="number"
+                  name="phoneNumber"
+                  placeholder="Phone Number"
+                  style={inputStyle}
+                />
+              </FormGroup>
+            </Col>
+            <Button variant="primary" onClick={this.onCreateUserHandler}>
+              Create Account
+            </Button>
+          </Form>
         </Jumbotron>
-        <h1> Welcome to Caravan! Signup to get started! </h1>
-        <Form className="form">
-          <Col>
-            <FormGroup>
-              <Label>Username</Label>
-              <Input
-                onChange={this.onChangeHandler}
-                type="text"
-                name="username"
-                placeholder="My Username"
-              />
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for="examplePassword">Password</Label>
-              <Input
-                onChange={this.onChangeHandler}
-                type="password"
-                name="password"
-                placeholder="Password"
-              />
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for="address">Address</Label>
-              <Input
-                onChange={this.onChangeHandler}
-                type="text"
-                name="address"
-                placeholder="Address"
-              />
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for="phoneNumber">Phone Number</Label>
-              <Input
-                onChange={this.onChangeHandler}
-                type="number"
-                name="phoneNumber"
-                placeholder="Phone Number"
-              />
-            </FormGroup>
-          </Col>
-          <Button variant="primary" onClick={this.onCreateUserHandler}>
-            Create Account
-          </Button>
-        </Form>
       </div>
     );
   }

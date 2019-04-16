@@ -1,0 +1,7 @@
+.item-collection {
+  margin: auto;
+  display: inline-grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
