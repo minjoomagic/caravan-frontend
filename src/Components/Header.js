@@ -30,7 +30,7 @@ const Header = props => {
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/items">Home</Nav.Link>
-          <Nav.Link href="/my_items">My Items</Nav.Link>
+          <Nav.Link href="/me">My Items</Nav.Link>
           <Nav.Link href="#pricing">Purchase History</Nav.Link>
         </Nav>
         <Button variant="outline-light" onClick={toggleForm}>

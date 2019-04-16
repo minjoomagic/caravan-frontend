@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "./Header";
 import SellForm from "./SellForm";
-import Alert from "./Alert";
 import ItemContainer from "./ItemContainer";
 import { withRouter } from "react-router-dom";
+
 
 class Main extends React.Component {
   state = {
@@ -174,6 +174,7 @@ class Main extends React.Component {
           />
         ) : null}
         <ItemContainer buyHandler={this.buyHandler} items={items} />
+
       </div>
     );
   }

@@ -5,7 +5,7 @@ import "./App.css";
 import Main from "./Components/Main";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
-import MyItems from "./Components/MyItems";
+import UsersContainer from "./Components/UsersContainer";
 import LandingPage from "./Components/LandingPage";
 
 class App extends Component {
@@ -102,6 +102,17 @@ class App extends Component {
             )}
           />
           <Route
+          path="/me"
+          render={routerProps => (
+            <UsersContainer
+              user={this.state.user}
+              title="Caravan"
+              logo="truck"
+              color="primary"
+            />
+          )}
+          />
+          <Route
             path="/signup"
             render={routerProps => (
               <Signup
@@ -123,17 +134,7 @@ class App extends Component {
               />
             )}
           />
-          <Route
-          path="/my_items"
-          render={routerProps => (
-            <MyItems
-              
-              title="Caravan"
-              logo="truck"
-              color="primary"
-            />
-          )}
-          />
+
           <Route
             path="/"
             render={routerProps => (
