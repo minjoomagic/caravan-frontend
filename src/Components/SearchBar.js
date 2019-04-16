@@ -30,7 +30,7 @@ class SearchBar extends React.Component{
       <div>
         <Form inline>
           <FormControl onChange={this.onChangeHandler} className="mr-sm-2" type="text" placeholder="Search" name="search" value={this.state.searchTerm}/>
-          <Button variant="outline-light" onClick={this.submitHandler}> Search </Button>
+          <Button className="mr-5" variant="outline-light" onClick={this.submitHandler}> Search </Button>
         </Form>
 
       </div>

@@ -1,16 +1,16 @@
-.card {
+.my-item-card {
   text-align: left;
   border: grey solid 1px;
   padding: 1rem;
   width: 15rem;
-  height: 29rem;
+  height: 25rem;
   /* display: inline-grid; */
   grid-gap: 10px;
   margin: 1rem 1rem;
   box-shadow: 3px 4px #171414;
 }
 
-.item-image {
+.my-item-image {
   /* opacity: 0.9; */
   justify-self: center;
   height: 12rem;

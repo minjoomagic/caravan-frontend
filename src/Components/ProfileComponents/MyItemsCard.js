@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
-import { capitalize } from "../Utilities/Utilities";
-import "../Styling/Item.css";
-import "../Styling/ItemCard.css";
+import { capitalize } from "../../Utilities/Utilities";
+import "../../Styling/MyItemsCard.css";
 
 // FOCUS WORK HERE, THIS IS WHERE WE HANDLE WHERE WE COME FROM TO EXECUTE DIFFERENT COMMANDS
-class Item extends React.Component {
+class MyItemsCard extends React.Component {
   state = {
     name: "",
     price: "",
@@ -20,18 +19,13 @@ class Item extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <Card className="card" style={{ width: "18rem" }}>
-            <Link to={`/items/${this.props.item.id}`}>
-              <Card.Img className="item-image" variant="top" src={image_url} />
-            </Link>
+          <Card className="my-item-card" style={{ "margin-left": "200px", "width": "18rem" }}>
+              <Card.Img className="my-item-image" variant="top" src={image_url} />
             <Card.Body>
               <Card.Title><h3>{capitalize(name)}</h3></Card.Title>
               <Card.Text>Category: {capitalize(category)}</Card.Text>
               <Card.Text>Price: ${price} </Card.Text>
               <Card.Text>Description: {capitalize(description)}</Card.Text>
-              <Link to={`/items/${this.props.item.id}`}>
-                <Button variant="success">More Info</Button>
-              </Link>
             </Card.Body>
           </Card>
         </div>
@@ -40,4 +34,4 @@ class Item extends React.Component {
   }
 }
 
-export default Item;
+export default MyItemsCard;

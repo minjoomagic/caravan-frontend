@@ -42,14 +42,9 @@ class Signup extends React.Component {
             delivery.
           </p>
           <p>
-            <Button className="mr-2" variant="primary" href="/signup">
-              Sign Up
-            </Button>
             <Button className="mr-2" variant="primary" href="/login">
               LogIn
             </Button>
-            <br />
-            <br />
             <Button className="mr-2" variant="success" href="/items">
               Explore
             </Button>

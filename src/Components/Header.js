@@ -26,26 +26,23 @@ const Header = props => {
           {props.title}
         </Navbar.Brand>
         <Navbar.Brand>
-          Hey {props.user ? capitalize(props.user.username) : null}!
+          Hey {props.user ? capitalize(props.user.username) : "guest"}!
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/items">Home</Nav.Link>
-          <Nav.Link href="/me">My Items</Nav.Link>
-          <Nav.Link href="#pricing">Purchase History</Nav.Link>
+          {props.user ? <Nav.Link href="/me">My Profile</Nav.Link> : <Nav.Link href="/login">Login</Nav.Link> }
         </Nav>
-        <Button variant="outline-light" onClick={toggleForm}>
-          Sell Item
+        <Nav className="make-middle">
+        <Button className="mr-5" variant="outline-light" onClick={toggleForm}>
+        Sell Item
         </Button>
-        <Navbar.Brand>Search for an Item!</Navbar.Brand>
-        <CategoryFilter
-          categories={props.categories}
-          selectHandler={props.selectHandler}
-        />
-        <SearchBar submitHandler={props.submitHandler} />
-        <Button onClick={logOutHandler} variant="outline-light">
-          {" "}
-          Log Out{" "}
-        </Button>
+          <CategoryFilter
+            categories={props.categories}
+            selectHandler={props.selectHandler}
+          />
+          <SearchBar submitHandler={props.submitHandler} />
+        </Nav>
+        {props.user ? <Button onClick={logOutHandler} variant="outline-light">LogOut</Button> : null }
       </Navbar>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter} from "react-router-dom";
 import {
   Dropdown,
   ButtonGroup,
@@ -7,8 +7,10 @@ import {
   FormControl,
   FormGroup,
   SplitButton,
-  Form
+  Form,
+
 } from "react-bootstrap";
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 
 const CategoryFilter = props => {
   const selectHandler = e => {
@@ -31,13 +33,16 @@ const CategoryFilter = props => {
 
   return (
     <div>
-      <Form controlId="exampleForm.ControlSelect1">
-        <Form.Control as="select" onChange={selectHandler}>
+      <Form className="mr-2" controlId="exampleForm.ControlSelect1">
+        <InputGroup>
+          <InputGroupAddon className="category-pre" addonType="prepend">Category</InputGroupAddon>
+          <Form.Control as="select" onChange={selectHandler}>
           <option value="All">All</option>
           {props.categories.map(category => {
             return <option value={`${category.name}`}>{category.name}</option>;
           })}
-        </Form.Control>
+          </Form.Control>
+        </InputGroup>
       </Form>
     </div>
   );

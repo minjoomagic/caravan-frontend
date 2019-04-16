@@ -41,10 +41,14 @@ class UsersContainer extends React.Component{
           logo="truck"
           color="primary" />
         <div className="user-view">
-          <div className="user-left-side">
+        <div>
+        </div>
+          <div className="user-left-side" >
+            <h2> My Items </h2>
             <UserItems items={myItems}/>
           </div>
           <div className="user-right-side">
+            <h2> My Purchases </h2>
             <UserPurchases items={myPurchases}/>
           </div>
         </div>
