@@ -5,7 +5,7 @@ import Show from "./Show";
 import "../Styling/ItemCont.css";
 
 const ItemContainer = props => {
-  let items = props.items.map(item => <ItemCard key={item.id} item={item} />);
+  let items = props.items.filter(item => item.sold === false).map(item => <ItemCard key={item.id} item={item} />);
 
   return (
     <div>
@@ -16,7 +16,7 @@ const ItemContainer = props => {
             let id = parseInt(routerProps.match.params.id);
             // console.log("items are:", props.items)
             let item = props.items.find(item => item.id === id);
-            return <Show item={item} />;
+            return <Show buyHandler={props.buyHandler} item={item} />;
           }}
         />
         <Route

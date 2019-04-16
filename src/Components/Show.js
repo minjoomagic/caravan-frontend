@@ -15,12 +15,10 @@ class View extends React.Component{
       <div className="view">
         <div className="left-side">
           <div className="item-main">
-            {"render un item ici " }
-            <ItemShow item={this.props}/>
+            <ItemShow buyHandler={this.props.buyHandler} item={this.props}/>
           </div>
         </div>
         <div className="right-side">
-         {"render sa desc ici"}
          <UserInfo item={this.props}/>
          <Map />
         </div>

@@ -1,23 +1,28 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { capitalize } from "../Utilities/Utilities";
-import { Navbar, Nav, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 import '../Styling/ItemShow.css';
 
 const ItemShow = (props) => {
 
   console.log("props from ItemShow", props.item.item)
-
   let {name, image_url} = props.item.item
+
+  const buyHandler = (e) => {
+    e.preventDefault()
+    console.log("buying this")
+    props.item.buyHandler(props.item.item)
+  }
 
   return(
     <div >
       <img className="item-show" src={image_url} alt="" />
       <h2>{capitalize(name)}</h2>
       <Link to={'/items'}>
-        <Button>back</Button>
-        <Button> Buy </Button>
+        <Button className="mr-2">Back</Button>
+        <Button onClick={buyHandler}> Buy </Button>
       </Link>
     </div>
   )

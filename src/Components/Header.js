@@ -29,8 +29,8 @@ const Header = props => {
           Hey {props.user ? capitalize(props.user.username) : null}!
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">My Items</Nav.Link>
+          <Nav.Link href="/items">Home</Nav.Link>
+          <Nav.Link href="/my_items">My Items</Nav.Link>
           <Nav.Link href="#pricing">Purchase History</Nav.Link>
         </Nav>
         <Button variant="outline-light" onClick={toggleForm}>

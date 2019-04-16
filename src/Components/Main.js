@@ -8,6 +8,7 @@ import { withRouter } from "react-router-dom";
 class Main extends React.Component {
   state = {
     items: [],
+    user: null,
     categories: [],
     searchTerm: "",
     selection: "",
@@ -113,9 +114,44 @@ class Main extends React.Component {
     this.setState({ sellForm: !this.state.sellForm });
   };
 
+  // ------------- But Item --------------
+
+  buyHandler = (item) => {
+    console.log("buying from main")
+    let user = this.props.user
+
+
+
+    console.log("this is my user:", user)
+    console.log("this is my item:", item)
+    console.log("this is my item's seller:", item.users[0])
+
+    if (user.username !== item.users[0].username){
+      let config = {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ user: user, item: item })
+      }
+      console.log("this is my item in main:", item)
+      fetch(`http://localhost:3000/items/${item.id}`, config)
+      .then(resp => {
+        if (resp.status === 204){
+          this.fetchItems()
+          this.props.history.push("/items")
+        }
+      })
+    }else{
+      window.alert("Can't buy your own items !")
+    }
+
+  }
+
   render() {
     let items = this.filterHandler();
     let categories = this.state.categories;
+    console.log("this is my user in Main:", this.state.user)
     return (
       <div>
         <Header
@@ -137,7 +173,7 @@ class Main extends React.Component {
             createSubmitHandler={this.createSubmitHandler}
           />
         ) : null}
-        <ItemContainer items={items} />
+        <ItemContainer buyHandler={this.buyHandler} items={items} />
       </div>
     );
   }

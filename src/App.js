@@ -5,6 +5,7 @@ import "./App.css";
 import Main from "./Components/Main";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
+import MyItems from "./Components/MyItems";
 import LandingPage from "./Components/LandingPage";
 
 class App extends Component {
@@ -121,6 +122,17 @@ class App extends Component {
                 color="primary"
               />
             )}
+          />
+          <Route
+          path="/my_items"
+          render={routerProps => (
+            <MyItems
+              
+              title="Caravan"
+              logo="truck"
+              color="primary"
+            />
+          )}
           />
           <Route
             path="/"
