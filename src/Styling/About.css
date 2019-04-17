@@ -8,6 +8,13 @@
   z-index: -2;
 }
 
+.about-text {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  color: #efefef;
+}
+
 .overlay {
   background-color: #000;
   opacity: 0.6;

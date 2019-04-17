@@ -27,15 +27,21 @@ const About = props => {
           </Button>
         </Nav>
       </Navbar>
-      <Jumbotron className="jumbo-tron">
+      <div className="backgr-landing">
         <div className="overlay" />
-        <h1 className={`fas fa-${props.logo}`}>Caravan</h1>
-        <br />
-        <br />
-        <h5>Proudly brought to you by:</h5>
-        <br />
-        <h4>Camille Feghali and Robert Han</h4>
-      </Jumbotron>
+        <div className="about-text">
+          <h1 className={`fas fa-${props.logo}`}>Caravan</h1>
+          <p>
+            The best way to sell all your goods online. Pickup in person or
+            delivery.
+          </p>
+          <br />
+
+          <h5>Proudly brought to you by:</h5>
+          <br />
+          <h4>Camille Feghali and Robert Han</h4>
+        </div>
+      </div>
       ;
     </div>
   );
