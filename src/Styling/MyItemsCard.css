@@ -1,4 +1,4 @@
-.my-item-card {
+.backup-my-item-card {
   text-align: left;
   border: grey solid 1px;
   padding: 1rem;
@@ -10,10 +10,40 @@
   box-shadow: 3px 4px #171414;
 }
 
-.my-item-image {
+.backup-my-item-image {
   /* opacity: 0.9; */
   justify-self: center;
   height: 12rem;
   width: 100%;
+  border: black solid 1px;
+}
+
+.my-item-card {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 15rem;
+  height: 29rem;
+  /* display: inline-grid; */
+  grid-gap: 10px;
+  margin: auto;
+  box-shadow: 3px 4px #171414;
+  display: block;
+  max-width: 300px;
+  /* max-height: 430px; */
+  width: auto;
+  height: auto;
+}
+
+.my-item-image {
+  /* opacity: 0.9; */
+  justify-self: center;
+  display: block;
+  max-width: 250px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
   border: black solid 1px;
 }

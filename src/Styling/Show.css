@@ -1,34 +1,34 @@
-.view{
+.view {
   display: flex;
-  border-width: 8px;
+  border-width: 2px;
   border-style: inset;
-  border-color: orange;
+  /* border-color: orange; */
 }
 
-.left-side{
+.left-side {
   flex-basis: 60%;
   display: flex;
   flex-direction: column;
-  border-width: 8px;
+  border-width: 2px;
   border-style: inset;
-  border-color: red;
+  /* border-color: red; */
 }
 
-.right-side{
+.right-side {
   flex-grow: 1;
   height: 100vh;
   top: 0;
   position: sticky;
-  border-color: blue;
-  border-width: 8px;
+  /* border-color: blue; */
+  border-width: 2px;
   border-style: inset;
 }
 
-.Item-Main{
+.Item-Main {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  border-width: 8px;
+  border-width: 2px;
   border-style: inset;
-  border-color: pink;
+  border-color: black;
 }

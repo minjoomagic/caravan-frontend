@@ -28,6 +28,12 @@ class Item extends React.Component {
               <Card.Title>
                 <h3>{capitalize(name)}</h3>
               </Card.Title>
+              <Card.Text>Category: {capitalize(category)}</Card.Text>
+              <Card.Text>Price: ${price} </Card.Text>
+              <Card.Text>Description: {capitalize(description)}</Card.Text>
+              <Link to={`/items/${this.props.item.id}`}>
+                <Button variant="success">More Info</Button>
+              </Link>
             </Card.Body>
           </Card>
         </div>
