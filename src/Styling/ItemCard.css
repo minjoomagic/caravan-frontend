@@ -13,10 +13,11 @@
   /* max-height: 430px; */
   width: auto;
   height: 430px;
+  opacity: 0.8;
 }
 
 .item-image {
-  /* opacity: 0.9; */
+  opacity: 0.8;
   justify-self: center;
   display: block;
   max-width: 250px;
@@ -42,10 +43,11 @@
   max-width: 1000px;
   max-height: 1000px;
   width: auto;
+  opacity: 0.9;
 }
 
 .show-image {
-  /* opacity: 0.9; */
+  opacity: 0.8;
   image-align: center;
   display: block;
   max-width: 600px;

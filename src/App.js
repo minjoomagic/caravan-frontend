@@ -7,6 +7,7 @@ import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import UsersContainer from "./Components/UsersContainer";
 import LandingPage from "./Components/LandingPage";
+import About from "./Components/About";
 
 class App extends Component {
   state = {
@@ -48,11 +49,11 @@ class App extends Component {
       .then(data => {
         localStorage.setItem("token", data.jwt);
         this.setState({ user: data.user }, () => {
-          if(this.state.user){
-            this.props.history.push("/items")
+          if (this.state.user) {
+            this.props.history.push("/items");
           }
         });
-      })
+      });
     console.log("token is:", localStorage.token);
   };
 
@@ -102,6 +103,7 @@ class App extends Component {
             )}
           />
           <Route
+<<<<<<< HEAD
           path="/me"
           render={routerProps => (
             <UsersContainer
@@ -112,6 +114,17 @@ class App extends Component {
               color="primary"
             />
           )}
+=======
+            path="/me"
+            render={routerProps => (
+              <UsersContainer
+                user={this.state.user}
+                title="Caravan"
+                logo="truck"
+                color="primary"
+              />
+            )}
+>>>>>>> background-img
           />
           <Route
             path="/signup"
@@ -133,6 +146,13 @@ class App extends Component {
                 logo="truck"
                 color="primary"
               />
+            )}
+          />
+
+          <Route
+            path="/about"
+            render={routerProps => (
+              <About title="Caravan" logo="truck" color="primary" />
             )}
           />
 
