@@ -43,7 +43,7 @@ class UsersContainer extends React.Component {
 
     return (
       <div>
-        <UserHeader title="Caravan" logo="truck" color="primary" />
+        <UserHeader logoutHandler={this.props.logoutHandler} title="Caravan" logo="truck" color="primary" />
         <div className="user-view">
           <div />
           <div className="user-left-side">

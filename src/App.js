@@ -105,6 +105,7 @@ class App extends Component {
           path="/me"
           render={routerProps => (
             <UsersContainer
+              logoutHandler={this.logoutHandler}
               user={this.state.user}
               title="Caravan"
               logo="truck"
