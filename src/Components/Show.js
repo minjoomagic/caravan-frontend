@@ -18,13 +18,8 @@ class View extends React.Component {
           </div>
         </div>
         <div className="right-side">
-<<<<<<< HEAD
-          <UserInfo item={this.props} />
-          <Map />
-=======
          <UserInfo item={this.props}/>
          <Map location={this.props}/>
->>>>>>> fixing-map
         </div>
       </div>
     );
