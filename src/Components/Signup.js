@@ -20,6 +20,11 @@ class Signup extends React.Component {
   };
 
   render() {
+    let logInStyle = {
+      width: "800px",
+      margin: "0 auto"
+    };
+
     let inputStyle = {
       width: "400px",
       borderWidth: "normal",
@@ -28,7 +33,7 @@ class Signup extends React.Component {
     };
 
     return (
-      <div>
+      <div style={logInStyle}>
         <Navbar bg={this.props.color} variant="dark">
           <Navbar.Brand className={`fas fa-${this.props.logo}`} href="/">
             {" "}
