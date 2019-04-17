@@ -5,15 +5,13 @@ import { Container, Col, Form, FormGroup, Label, Input } from "reactstrap";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import Jumbotron from "react-bootstrap/Jumbotron";
 
-class UserHeader extends React.Component{
-
+class UserHeader extends React.Component {
   logoutHandler = () => {
-    console.log("loging out! Props are:", this.props)
-    this.props.logoutHandler()
-  }
+    console.log("loging out! Props are:", this.props);
+    this.props.logoutHandler();
+  };
 
-  render(){
-
+  render() {
     let logInStyle = {
       width: "auto",
       margin: "0 auto"
@@ -28,12 +26,18 @@ class UserHeader extends React.Component{
           <Nav className="mr-auto">
             <Nav.Link href="/items">Home</Nav.Link>
           </Nav>
-          <Button className="mr-5" variant="outline-light" onClick={this.logoutHandler}> Log Out </Button>
+          <Button
+            className="mr-5"
+            variant="outline-light"
+            onClick={this.logoutHandler}
+          >
+            {" "}
+            Log Out{" "}
+          </Button>
         </Navbar>
       </div>
-    )
+    );
   }
 }
 
-
-export default UserHeader
+export default UserHeader;

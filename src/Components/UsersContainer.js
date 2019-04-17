@@ -30,6 +30,7 @@ class UsersContainer extends React.Component {
   };
 
   render() {
+    console.log("hereeeeee", this.props);
     let myItems = this.state.items.filter(
       item =>
         item.users[0].username === this.state.user.username &&
@@ -43,7 +44,12 @@ class UsersContainer extends React.Component {
 
     return (
       <div>
-        <UserHeader logoutHandler={this.props.logoutHandler} title="Caravan" logo="truck" color="primary" />
+        <UserHeader
+          logoutHandler={this.props.logoutHandler}
+          title="Caravan"
+          logo="truck"
+          color="primary"
+        />
         <div className="user-view">
           <div />
           <div className="user-left-side">

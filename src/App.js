@@ -91,6 +91,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("logoutHandler", this.logoutHandler);
     return (
       <div className="App">
         {/*this.state.user ? this.state.user.username : "Not Logged In"*/}
@@ -103,28 +104,20 @@ class App extends Component {
             )}
           />
           <Route
-<<<<<<< HEAD
-          path="/me"
-          render={routerProps => (
-            <UsersContainer
-              logoutHandler={this.logoutHandler}
-              user={this.state.user}
-              title="Caravan"
-              logo="truck"
-              color="primary"
-            />
-          )}
-=======
             path="/me"
-            render={routerProps => (
-              <UsersContainer
-                user={this.state.user}
-                title="Caravan"
-                logo="truck"
-                color="primary"
-              />
-            )}
->>>>>>> background-img
+            render={routerProps => {
+              console.log("routerProps", routerProps);
+              return (
+                <UsersContainer
+                  user={this.state.user}
+                  title="Caravan"
+                  logo="truck"
+                  color="primary"
+                  blabla={this.logoutHandler}
+                  logoutHandler={this.logoutHandler}
+                />
+              );
+            }}
           />
           <Route
             path="/signup"
