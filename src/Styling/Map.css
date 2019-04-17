@@ -1,6 +1,18 @@
 @import '../../node_modules/leaflet/dist/leaflet.css';
 
 #map{
-  height:100px,
+  height:100px;
   width:100px
+}
+
+/* .specialistMap {
+  max-width: 1000px;
+} */
+
+.leaflet-marker-icon {
+  border: 4px rgba(1, 22, 245, 0.72) solid;
+  width: 5em !important;
+  height: 5em !important;
+  background-color: rgba(92, 159, 180, 0.66);
+  border-radius: 50%;
 }

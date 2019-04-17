@@ -20,7 +20,7 @@ class View extends React.Component{
         </div>
         <div className="right-side">
          <UserInfo item={this.props}/>
-         <Map />
+         <Map location={this.props}/>
         </div>
       </div>
     )
