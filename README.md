@@ -42,7 +42,7 @@ Link to demo: https://youtube....... remains to be hosted
   - Run `npm start`
   
 ### How to use?
-- Create and account.
+- Create an account.
 - Post items for sale.
 - Buy items you like.
 
