@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Caravan
+Caravan is a fullstack web application built with Ruby on Rails and ReactJS. It is a E-commerce platform that allows users to buy & sell second hand goods close to them.
+It integrates the Leaflet library and the Mapquest API to show users where items are being sold.
 
-## Available Scripts
+### Motivation
+Built in hopes of promoting a more circular economy where people exchange goods in their proximity.
 
-In the project directory, you can run:
+### Demo 
+Link to demo: https://youtube....... remains to be hosted
 
-### `npm start`
+### Tech / Frameworks
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Built with
+- ReactJS
+- Ruby on Rails
+- Leaflet Maps: https://react-leaflet.js.org/
+- React Router
+- MapQuest API: https://developer.mapquest.com/documentation/
+- PostgreSQL
+- OAuth using Bcrypt & JWT
+- Bootstrap 4
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Features
 
-### `npm test`
+- Users can:
+  - Register and Login.
+  - Browse items for sale.
+  - Filter by search term or category.
+  - See individual item's details (price, category, description, vendor's location, vendor's phone number).
+  - Buy items.
+  - Post items for sale.
+  - Look at purchase history and posted items for sale.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+- Clone this repository and the backend found here: https://github.com/camfeghali/caravan-backend
+- In backend directory: 
+  - Run `rails db:migrate`
+  - Run `rails db:seed`
+  - Run `rails s`
+- In frontend directory:
+  - Run `npm install`
+  - Run `npm start`
+  
+### How to use?
+- Create and account.
+- Post items for sale.
+- Buy items you like.
 
-### `npm run build`
+### Credit
+I would like to thank my partner Robert Han and  my instructional team for their support.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### License
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Not really sure, everyone can use it!
+  
